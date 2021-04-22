@@ -51,4 +51,4 @@ User.init(
   }
 );
 
-moduel.exports = User;
+module.exports = User;
