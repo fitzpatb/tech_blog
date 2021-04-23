@@ -1,0 +1,10 @@
+{{#each this}}
+<div class="card col-9">
+  <div class="card-body">
+    <p class="card-text">{{comment_text}}</p>
+  </div>
+  <div class="person">
+    -{{user.username}}, {{format_date created_at}}
+  </div>
+</div>
+{{/each}}

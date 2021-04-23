@@ -1,3 +1,16 @@
 header {
   background-color: brown;
 }
+.card {
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
+}
+
+.card-header {
+  width: 100%;
+}
+
+.comment-form {
+  display: none;
+}
