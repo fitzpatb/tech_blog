@@ -14,3 +14,13 @@ header {
 .comment-form {
   display: none;
 }
+
+#login {
+  margin-left: 20px;
+
+}
+
+#signup {
+  margin-left: 20px;
+  display: none;
+}
