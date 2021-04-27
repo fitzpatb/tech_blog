@@ -1,13 +1,31 @@
+{{#each posts as |post| }}
+
 {{> post-render post }}
 
-{{> comments-render post.comments}}
-<div>
-  <button class="comment-btn">Add Comment</button>
-  <div class="card col-9">
-    <form class="comment-form">
-      It worked
-    </form>
-  </div>
+{{/each}}
+
+<div class="col-md-6 rounded border border-secondary" id="new-post">
+  <h2>New Post</h2>
+
+  <form class="form" id="new-post-form">
+    <div class="form-group">
+      <label for="post-title">Title:</label>
+      <input class="form-input" type="text" id="post-title" />
+    </div>
+    <div class="form-group">
+      <label for="post-content">Content:</label>
+      <input class="form-input" type="text" id="post-content" />
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary" type="submit">Add Post</button>
+    </div>
+  </form>
 </div>
 
-<script src="/js/newComment.js"></script>
+<button id="add">Add Post</button>
+
+<div class="card">
+  I hope the posts worked
+</div>
+
+<script src="./js/newPost.js"></script>

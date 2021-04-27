@@ -24,3 +24,19 @@ header {
   margin-left: 20px;
   display: none;
 }
+
+.new-post {
+  display: none;
+}
+
+#post-title {
+  width: 100%;
+  padding: 12px 20px;
+  box-sizing: border-box;
+}
+
+#post-content {
+  width: 100%;
+  padding: 42px 20px;
+  box-sizing: border-box;
+}

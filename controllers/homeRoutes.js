@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require("../models");
 const sequelize = require("../config/connection");
+const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
@@ -34,36 +35,7 @@ router.get('/', async (req, res) => {
 
 });
 
-router.get("/dashboard", async (req, res) => {
-  if (req.session.logged_in === true) {
-    try {
-      const userData = await User.findOne({
-        where: { id: req.session.id},
-        include: [{
-          model: Post,
-          as: 'post',
-          attributes: [
-            'id',
-            'post_title',
-            'post_text',
-            'created_at'
-          ]
-        },
-        {
-          model: Comment,
-          as: 'comments',
-          attributes: ['comment_text', "user_id", "id"]
-        }]
-      });
-      const userPosts = userData.get({ plain: true});
-      res.status(200).json(userPosts);
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  } else {
-    res.redirect('login');
-  }
-})
+
 
 router.get("/post/:id", async (req, res) => {
   try {
@@ -106,4 +78,48 @@ router.get("/login", (req, res) => {
   res.render('login');
 })
 
+router.get("/logout", (req, res) => {
+  res.render('logout');
+})
+
+router.get('/dashboard', withAuth, async (req, res) => {
+  if (req.session.logged_in === true) {
+    try {
+      const postData = await Post.findAll({
+        where: {
+          user_id: req.session.user_id
+        },
+        attributes: [
+          'id',
+          'post_title',
+          'post_text',
+          'created_at'
+        ],
+        include: [
+          {
+            model: User,
+            as: 'user',
+            attributes: ['username', "id"]
+          },
+          {
+            model: Comment,
+            as: 'comments',
+            attributes: ['comment_text', "user_id", "id"]
+          }
+        ]
+      });
+      const posts = postData.map((post) => post.get({ plain: true}));
+      console.log(posts);
+      res.render('dashboard', {
+        posts,
+        logged_in: true
+      });
+    } catch (err) {
+    res.status(500).json(err);
+    }
+  } else {
+    res.redirect('/login');
+  }
+
+})
 module.exports = router;

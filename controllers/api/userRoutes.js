@@ -17,14 +17,14 @@ router.post('/', async (req, res) => {
   }
 });
 
-router.get('/login', async (req, res) => {
-  try {
-    const users = await User.findAll();
-    res.status(200).json(users);
-  } catch (err) {
-    res.status(500),json(err);
-  }
-})
+// router.get('/login', async (req, res) => {
+//   try {
+//     const users = await User.findAll();
+//     res.status(200).json(users);
+//   } catch (err) {
+//     res.status(500),json(err);
+//   }
+// })
 
 router.post('/login', async (req, res) => {
   try {
@@ -36,7 +36,7 @@ router.post('/login', async (req, res) => {
         .json({ message: 'Incorrect email or password, please try again' });
       return;
     }
-
+    console.log(userData);
     const validPassword = await userData.checkPassword(req.body.password);
 
     if (!validPassword) {
@@ -57,6 +57,17 @@ router.post('/login', async (req, res) => {
 
   } catch (err) {
     res.status(400).json(err);
+  }
+});
+
+router.post('/logout', async (req, res) => {
+  if (req.session.logged_in) {
+    await req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    console.log('user');
+    res.status(404).end();
   }
 });
 
