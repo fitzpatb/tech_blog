@@ -1,8 +1,11 @@
-{{#each posts as |post| }}
+<div class="posts-div">
+  {{#each posts as |post| }}
 
-{{> post-render post }}
+  {{> dash-posts post }}
 
-{{/each}}
+  {{/each}}
+</div>
+
 
 <div class="col-md-6 rounded border border-secondary" id="new-post">
   <h2>New Post</h2>
@@ -22,10 +25,27 @@
   </form>
 </div>
 
-<button id="add">Add Post</button>
+<div class="col-md-6 rounded border border-secondary" id="edit">
+  <h2>Edit Post</h2>
 
-<div class="card">
-  I hope the posts worked
+  <form class="form edit-form">
+    <div class="form-group">
+      <label for="edit-title">Title:</label>
+      <input class="form-input" type="text" id="edit-title" value=""/>
+    </div>
+    <div class="form-group">
+      <label for="edit-content" >Content:</label>
+      <input class="form-input" type="text" id="edit-content" value=""/>
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary" type="submit">Update</button>
+      <button class="btn btn-primary" id="delete" type="button">Delete</button>
+    </div>
+  </form>
 </div>
 
+
+<button id="add">Add Post</button>
+
 <script src="./js/newPost.js"></script>
+<script src="./js/editPost.js"></script>

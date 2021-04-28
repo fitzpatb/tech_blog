@@ -16,4 +16,38 @@ router.post('/post', async (req, res) => {
   }
 })
 
+router.get('/post', async (req, res) => {
+  try {
+    const posts = await Post.findAll();
+    res.status(200).json(posts);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
+
+router.post('/comment', async (req, res) => {
+  try {
+    const newComment = await Comment.create({
+      comment_text: req.body.comment,
+      user_id: req.session.user_id,
+      post_id: req.session.post_id
+    });
+    res.status(200).json(newComment);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+})
+
+router.put('/update', async (req, res) => {
+  try {
+    const updatePost = await Post.update(req.body, {
+      where: {
+        id: req.body.id
+      }
+    });
+    res.status(200).json(updatePost);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+})
 module.exports = router;

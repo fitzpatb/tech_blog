@@ -25,18 +25,32 @@ header {
   display: none;
 }
 
-.new-post {
+#new-post {
   display: none;
 }
 
-#post-title {
+#post-title, #edit-title {
   width: 100%;
   padding: 12px 20px;
   box-sizing: border-box;
+
 }
 
-#post-content {
+#post-content, #edit-content {
   width: 100%;
   padding: 42px 20px;
   box-sizing: border-box;
+
+}
+
+.posts {
+  width: 100%;
+  background-color: rgba(62, 35, 35, 0.913);
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px;
+}
+
+#edit {
+  display: none;
 }
