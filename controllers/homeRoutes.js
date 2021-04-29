@@ -95,7 +95,9 @@ router.get("/login", (req, res) => {
 })
 
 router.get("/logout", (req, res) => {
-  res.render('logout');
+  res.render('logout', {
+    logged_in: true
+  });
 })
 
 router.get('/edit', async (req, res) => {

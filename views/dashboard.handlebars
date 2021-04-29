@@ -1,4 +1,4 @@
-<div class="posts-div">
+<div class="container-fluid" id="user-posts">
   {{#each posts as |post| }}
 
   {{> dash-posts post }}
@@ -44,8 +44,10 @@
   </form>
 </div>
 
+<div class="container-fluid" id="add">
+  <button class="btn btn-secondary" id="add-btn">Add Post</button>
+</div>
 
-<button id="add">Add Post</button>
 
 <script src="./js/newPost.js"></script>
 <script src="./js/editPost.js"></script>

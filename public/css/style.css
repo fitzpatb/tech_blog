@@ -1,23 +1,48 @@
+body {
+  background-color: tan;
+}
+
 header {
   background-color: brown;
+}
+
+nav {
+  color: white;
 }
 .card {
   margin: 0 auto; /* Added */
   float: none; /* Added */
   margin-bottom: 10px; /* Added */
+  border: none;
 }
 
 .card-header {
   width: 100%;
 }
 
-.comment-form {
+#page-title {
+  margin-left: 8%;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  color:darkseagreen
+}
+
+#add-comment {
   display: none;
+}
+
+.comment-form-div, #login, #logout, #signup {
+  background-color: rgb(89, 63, 89);
+  color: white;
+}
+
+.comment-form {
+  padding-top: 20px;
+  color: white
 }
 
 #login {
   margin-left: 20px;
-
 }
 
 #signup {
@@ -25,11 +50,15 @@ header {
   display: none;
 }
 
+#logout, #login, #signup {
+  margin: 0 auto;
+}
+
 #new-post {
   display: none;
 }
 
-#post-title, #edit-title {
+#post-title, #edit-title, #comment {
   width: 100%;
   padding: 12px 20px;
   box-sizing: border-box;
@@ -40,17 +69,52 @@ header {
   width: 100%;
   padding: 42px 20px;
   box-sizing: border-box;
-
 }
 
 .posts {
-  width: 100%;
+  width: 70%;
   background-color: rgba(62, 35, 35, 0.913);
-  margin: 0 auto; /* Added */
-  float: none; /* Added */
   margin-bottom: 10px;
 }
 
 #edit {
   display: none;
+}
+
+#add, #comment-container, #user-posts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+#add-btn {
+  width: 150px;
+}
+
+.bg-info, a {
+  color: white;
+}
+
+.title {
+  float: left;
+  margin-left: 10px;
+}
+
+.post-date {
+  float: right;
+}
+
+.posts-div {
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px;
+}
+
+#user-posts {
+  display: block;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
 }

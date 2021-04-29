@@ -1,6 +1,8 @@
 const postsDiv = document.querySelector(".posts-div");
 const posts = document.getElementsByClassName("posts");
 const editDiv = document.getElementById('edit');
+const deleteBtn = document.getElementById('delete');
+
 console.log(posts.length);
 
 for (var i = 0; i < posts.length; i++) {
@@ -29,6 +31,16 @@ for (var i = 0; i < posts.length; i++) {
                   id: postNumber,
                   post_title: newTitle,
                   post_text: newContent
+                }),
+                headers: { 'Content-Type': 'application/json' },
+              });
+              document.location.replace("/dashboard");
+            });
+            deleteBtn.addEventListener("click", function(event) {
+              const deletePost = fetch('api/dashboard/delete', {
+                method: 'DELETE',
+                body: JSON.stringify({
+                  id: postNumber
                 }),
                 headers: { 'Content-Type': 'application/json' },
               });

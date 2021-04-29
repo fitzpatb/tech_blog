@@ -50,4 +50,18 @@ router.put('/update', async (req, res) => {
     res.status(400).json(err);
   }
 })
+
+router.delete('/delete', async (req, res) => {
+  try {
+    const deletePost = await Post.destroy({
+      where: {
+        id: req.body.id
+      }
+    });
+    res.status(200).json(deletePost);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+})
+
 module.exports = router;
