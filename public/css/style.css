@@ -31,7 +31,7 @@ nav {
   display: none;
 }
 
-.comment-form-div, #login, #logout, #signup {
+.comment-form-div, #login, #logout, #signup, #edit, #new-post {
   background-color: rgb(89, 63, 89);
   color: white;
 }
@@ -73,7 +73,6 @@ nav {
 
 .posts {
   width: 70%;
-  background-color: rgba(62, 35, 35, 0.913);
   margin-bottom: 10px;
 }
 
@@ -81,7 +80,7 @@ nav {
   display: none;
 }
 
-#add, #comment-container, #user-posts {
+#add, #comment-container, #user-post {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -110,11 +109,4 @@ nav {
   margin: 0 auto; /* Added */
   float: none; /* Added */
   margin-bottom: 10px;
-}
-
-#user-posts {
-  display: block;
-  align-items: center;
-  justify-content: center;
-  margin: auto;
 }

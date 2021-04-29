@@ -1,13 +1,15 @@
 const newPostBtn = document.getElementById("add");
 const newPostDiv = document.getElementById('new-post');
 const newPostForm = document.getElementById("new-post-form");
-
+const userPosts = document.getElementById("user-posts");
+const editPost = document.getElementById('edit');
 
 newPostBtn.addEventListener('click', function(event) {
   event.preventDefault();
   newPostBtn.style.display = 'none';
   newPostDiv.style.display = "block";
-
+  userPosts.style.display = 'none';
+  editPost.style.display = 'none';
 })
 
 newPostForm.addEventListener("submit", async function(event) {

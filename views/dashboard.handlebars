@@ -1,4 +1,4 @@
-<div class="container-fluid" id="user-posts">
+<div id="user-posts">
   {{#each posts as |post| }}
 
   {{> dash-posts post }}
@@ -7,7 +7,9 @@
 </div>
 
 
-<div class="col-md-6 rounded border border-secondary" id="new-post">
+
+
+<div class="container-fluid col-md-6 rounded border border-secondary" id="new-post">
   <h2>New Post</h2>
 
   <form class="form" id="new-post-form">
@@ -20,12 +22,12 @@
       <input class="form-input" type="text" id="post-content" />
     </div>
     <div class="form-group">
-      <button class="btn btn-primary" type="submit">Add Post</button>
+      <button class="btn btn-secondary" type="submit">Add Post</button>
     </div>
   </form>
 </div>
 
-<div class="col-md-6 rounded border border-secondary" id="edit">
+<div class="container-fluid col-md-6 rounded border border-secondary" id="edit">
   <h2>Edit Post</h2>
 
   <form class="form edit-form">
@@ -38,8 +40,8 @@
       <input class="form-input" type="text" id="edit-content" value=""/>
     </div>
     <div class="form-group">
-      <button class="btn btn-primary" type="submit">Update</button>
-      <button class="btn btn-primary" id="delete" type="button">Delete</button>
+      <button class="btn btn-secondary" type="submit">Update</button>
+      <button class="btn btn-secondary" id="delete" type="button">Delete</button>
     </div>
   </form>
 </div>
@@ -47,6 +49,7 @@
 <div class="container-fluid" id="add">
   <button class="btn btn-secondary" id="add-btn">Add Post</button>
 </div>
+
 
 
 <script src="./js/newPost.js"></script>

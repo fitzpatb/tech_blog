@@ -1,4 +1,4 @@
-const postsDiv = document.querySelector(".posts-div");
+const postsDiv = document.querySelector("#user-posts");
 const posts = document.getElementsByClassName("posts");
 const editDiv = document.getElementById('edit');
 const deleteBtn = document.getElementById('delete');
