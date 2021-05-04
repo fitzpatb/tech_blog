@@ -4,8 +4,6 @@
 ## Description
 With project I made a functioning tech blog that saves post by user allowing you to edit and delete posts you can comment on other users posts.
 
-![gif](./public/images/workingvideo.gif)
-
 [link](https://vimeo.com/545199183)
 
 ![photo](./public/images/homepage.png)
