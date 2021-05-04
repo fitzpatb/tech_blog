@@ -4,6 +4,25 @@
 ## Description
 With project I made a functioning tech blog that saves post by user allowing you to edit and delete posts you can comment on other users posts.
 
+![gif](./public/images/workingvideo.gif)
+
+[link](https://vimeo.com/545199183)
+
+![photo](./public/images/homepage.png)
+
+![photo](./public/images/dashboard.png)
+
+![photo](./public/images/login.png)
+
+![photo](./public/images/signup.png)
+
+![photo](./public/images/edit.png)
+
+![photo](./public/images/post.png)
+
+![photo](./public/images/newpost.png)
+
+![photo](./public/images/comment.png)
 
 ## Table of Contents
 * [Installation](#installation)
